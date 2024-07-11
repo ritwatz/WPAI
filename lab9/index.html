@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS Node.js App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+  <div ng-controller="myController">––
+    <h1>{{ message }}</h1>
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myController', function($scope) {
+      $scope.message = 'Hello! this my webpages using angular js, node js, and express js!!!!!!';
+    });
+  </script>
+</body>
+</html>
