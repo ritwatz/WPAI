@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Form</title>
+</head>
+<body>
+    <h1>Input Form</h1>
+    <form action="{% url 'book_input' %}" method="post">
+        {% csrf_token %}
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" name="title">
+        <br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author">
+        <br>
+        <label for="pub_date">Author:</label>
+        <input type="date" id="pub_date" name="pub_date">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
