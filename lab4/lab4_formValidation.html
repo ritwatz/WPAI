@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html style="background-color:rgb(16, 176, 216);">
+<head>
+<title>Application Form</title>
+<style>
+  hr{border: 0.7px solid darkblue;}
+</style>
+<script>
+    function validateform()
+    {
+        var fname=document.getElementById("fname").value;
+        var lname=document.getElementById("lname").value;
+        var dob=document.getElementById("dob").value;
+        var age=document.getElementById("age").value;
+        var genderMale=document.getElementById("male").checked;
+        var genderFemale=document.getElementById("female").checked;
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+        var confirm_password=document.getElementById("confirm_password").value;
+        var position=document.getElementById("position").value;
+        var langJava=document.getElementById("java").checked;
+        var langJs=document.getElementById("javascript").checked;
+        var langPy=document.getElementById("python").checked;
+        if(fname==""||lname==""||dob==""||age==""||email==""||password==""||confirm_password=="")
+        {
+            alert("All field should be filled!!!");
+            return false;
+        }
+        if(isNaN(age)||age<=0)
+        {
+            alert("Enter correct age please!!!");
+            return false;
+        }
+        if(password!=confirm_password)
+        {
+            alert("Passwords do not match!!!");
+            return false;
+        }
+        return true;
+    }
+
+</script>
+</head>
+<body>
+
+<h1 style="border:5px solid rgb(5,3,100); text-align: center;color: rgb(5, 3, 100); margin: 50px; padding: 50px;">Application Form</h1>
+<br>
+<hr>
+<br>
+<form onsubmit="return validateform()">
+  <div>
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname">
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname">
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="dob">Date of birth:</label>
+    <input type="text" id="dob" name="dob" placeholder="mm/dd/yyyy">
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age">
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" placeholder="Enter email address">
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="position">Positions Available:</label>
+    <select id="position" name="position">
+      <option value="junior">Junior/Mid Developer</option>
+      <option value="senior">Senior Developer</option>
+    </select>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="language">Programming Languages:</label>
+    <br>
+    <input type="checkbox" id="java" name="language" value="java">
+    <label for="java">Java</label>
+    <br>
+    <input type="checkbox" id="javascript" name="language" value="javascript">
+    <label for="javascript">JavaScript</label>
+    <br>
+    <input type="checkbox" id="python" name="language" value="python">
+    <label for="python">Python</label>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div>
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" id="confirm_password" name="confirm_password">
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div class="button">
+    <button type="submit" style="background-color: rgb(5,3,100);color:azure;">Submit</button>
+    <button type="reset" style="background-color: rgb(5,3,100);color:azure;">Reset</button>
+  </div>
+</form>
+<br>
+<br>
+</body>
+</html>

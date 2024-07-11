@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+<h1>Form Validation Example</h1>
+<form action="/submit" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+    </div>
+    <div>
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile">
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<div id="errors"></div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const formJSON = Object.fromEntries(formData.entries());
+
+        const response = await fetch('/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formJSON)
+        });
+
+        const result = await response.json();
+        const errorsDiv = document.getElementById('errors');
+        errorsDiv.innerHTML = '';
+
+        if (result.errors) {
+            result.errors.forEach(error => {
+                const errorElement = document.createElement('div');
+                errorElement.textContent = error.msg;
+                errorsDiv.appendChild(errorElement);
+            });
+        } else {
+            errorsDiv.textContent = 'Form submitted successfully!';
+        }
+    });
+</script>
+</body>
+</html>

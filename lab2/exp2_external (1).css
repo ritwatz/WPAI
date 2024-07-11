@@ -1,0 +1,22 @@
+th{
+  border: 3px solid;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid;
+}
+
+td {
+  text-align: left;
+  border: 1px solid;
+}
+
+body {
+  background-color: lightblue;
+}
+
+h1{
+  color:DodgerBlue;
+  align:center;
+}

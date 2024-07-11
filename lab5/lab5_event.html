@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Demonstration</title>
+    <style>
+        .event-box {
+            width: 400px;
+            height: 200px;
+            margin: 20px;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid #ca0b0b;
+            box-shadow:3px 3px 3px 3px cyan;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Events Demonstration</h1>
+
+    <!-- Click Event -->
+    <div class="event-box" id="clickBox">Click Me!</div>
+
+    <!-- Mouse Over and Out Event -->
+    <div class="event-box" id="hoverBox"> Over Me!</div>
+
+    <!-- Double-Click Event -->
+    <div class="event-box" id="doubleClickBox">Double Click Me!</div>
+
+    <!-- Change Event -->
+    <select id="selectBox" style="display: block; margin: 20px; background-color: aqua;">
+        <option value="">Select an option</option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+    </select>
+
+    <script>
+        // Click Event
+        document.getElementById('clickBox').onclick = function() {
+            alert('Box Clicked!');
+            this.style.backgroundColor = 'red';
+        };
+
+        // Mouse Over and Out Event
+        document.getElementById('hoverBox').onmouseover = function() {
+            this.style.backgroundColor = 'yellow';
+            this.innerHTML = 'Mouse Over!';
+        };
+
+        //document.getElementById('hoverBox').onmouseout = function() {
+         //   this.style.backgroundColor = 'PINK';
+         //   this.style.boxShadow="10px 20px 30px blue";
+         //   this.innerHTML = 'Hover Over Me!';
+        //};
+
+        // Double-Click Event
+        document.getElementById('doubleClickBox').ondblclick = function() {
+            this.style.backgroundColor = 'green';
+            this.innerHTML = 'Double Clicked!';
+        };
+
+        // Change Event
+        document.getElementById('selectBox').onchange = function() {
+            alert('Selected: ' + this.value);
+        };
+
+        // after hover add click event
+        document.getElementById('hoverBox').onclick = function() {
+            this.innerHTML='Box Hover and Clicked!!';
+            this.style.backgroundColor = 'purple';
+        };
+    </script>
+</body>
+</html>

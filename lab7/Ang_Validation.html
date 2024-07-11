@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS Form Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app="">
+
+<h1>Sample Form Validation</h1>
+
+<div ng-app="">
+    <form name="myForm" novalidate>
+        <!-- Name Field -->
+        <p>Enter your Name: 
+            <input type="text" name="userName" ng-model="user.name" required>
+            <span style="color:red" ng-show="myForm.userName.$dirty && myForm.userName.$invalid">
+                <span ng-show="myForm.userName.$error.required">Name is required.</span>
+            </span>
+        </p>
+
+        <!-- Email Field -->
+        <p>Enter your Email: 
+            <input type="email" name="userEmail" ng-model="user.email" required>
+            <span style="color:red" ng-show="myForm.userEmail.$dirty && myForm.userEmail.$invalid">
+                <span ng-show="myForm.userEmail.$error.required">Email is required.</span>
+                <span ng-show="myForm.userEmail.$error.email">Invalid email address.</span>
+            </span>
+        </p>
+
+        <!-- Age Field -->
+        <p>Enter your Age: 
+            <input type="number" name="userAge" ng-model="user.age" min="18" max="99" required>
+            <span style="color:red" ng-show="myForm.userAge.$dirty && myForm.userAge.$invalid">
+                <span ng-show="myForm.userAge.$error.required">Age is required.</span>
+                <span ng-show="myForm.userAge.$error.number">Invalid age.</span>
+                <span ng-show="myForm.userAge.$error.min">Age must be at least 18.</span>
+                <span ng-show="myForm.userAge.$error.max">Age must be under 99.</span>
+            </span>
+        </p>
+
+        <!-- Submit Button -->
+        <p>
+            <button ng-disabled="myForm.$invalid">Submit</button>
+        </p>
+    </form>
+</div>
+
+</body>
+</html>
