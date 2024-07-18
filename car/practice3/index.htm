@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testing</title>
+        <script>
+            function whell(){
+                document.getElementById("caller").innerHTML="Wheels";
+           };
+           function roof(){
+                document.getElementById("caller").innerHTML="Car roof";
+           };
+           function door(){
+                document.getElementById("caller").innerHTML="Car door";
+           };
+           function eng(){
+                document.getElementById("caller").innerHTML="Engine";
+           };
+        </script>
+    </head>
+    <body>
+        <br>
+        <img id="img1" src="akass.jpg" usemap="#carmpa">
+        <map name="carmpa">
+            <area shape="circle" coords="370,230,40" alt="Tyre" onmouseover="whell()">
+            <area shape="circle" coords="636,141,35" alt="Tyre" onmouseover="whell()">
+            <area coords="275,5,520,33," alt="roof" onmouseover="roof()">
+            <area coords="423,69,546,184" alt="door" onmouseover="door()">
+            <area coords="60,120,312,161" alt="engine" onmouseover="eng()">
+          </map>
+          <br>
+          <div id="caller">
+    </body>
+</html>
